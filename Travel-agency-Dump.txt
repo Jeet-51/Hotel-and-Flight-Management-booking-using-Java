@@ -1,0 +1,87 @@
+-- Java swings by Junaid Khateeb
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 24, 2020 at 06:39 AM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `travelagency`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE IF NOT EXISTS `bookings` (
+  `BookingId` varchar(10) NOT NULL DEFAULT '1',
+  `source` varchar(10) NOT NULL,
+  `destination` varchar(10) NOT NULL,
+  `departflightcode` varchar(10) NOT NULL,
+  `returnflightcode` varchar(10) NOT NULL,
+  `fare` double NOT NULL,
+  `salutation` varchar(5) NOT NULL,
+  `firstname` varchar(10) NOT NULL,
+  `lastname` varchar(10) NOT NULL,
+  `contact` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`BookingId`, `source`, `destination`, `departflightcode`, `returnflightcode`, `fare`, `salutation`, `firstname`, `lastname`, `contact`) VALUES
+('1', 'Mumbai', 'Kolkata', '9W 319', '', 5500, 'Mr.', 'Ajay', 'Mehta', '9820134987'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'ajay', 'sharma', '9821345678'),
+('1', 'MUMBAI', 'DELHI', 'JW 123', 'JW 124', 14738.2, 'Mr.', 'Junaid', 'Khateeb', '9820183864'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'fdfdsfd', 'dsfdsfds', '3131232123'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'ajay', 'mehta', '2345678'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'Rajesh', 'Patil', '234567889'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'Ajay', 'Sinha', '4354356666'),
+('1', 'MUMBAI', 'DELHI', 'JW 123', 'JW 124', 14738.2, 'Mr.', 'pankaj', 'singh', '234353453'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'dsfsfdf', 'fxcvxvxz', '32432432'),
+('1', 'MUMBAI', 'DELHI', 'JW 123', '6E 914', 12273.18, 'Mr.', 'junaid', 'khateeb', '4353453434'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'abc', 'def', '344342432324'),
+('1', 'MUMBAI', 'DELHI', 'JW 123', '6E 914', 12273.18, 'Mr.', 'abc', 'def', '34535353235'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'abcdefd', 'dsdsfdf', '12345456'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'fdgdff', 'dfdf', 'dfdsff'),
+('1', 'MUMBAI', 'DELHI', 'JW 123', 'JW 124', 14738.2, 'Mr.', 'dfsdfds', 'dfdfdf', 'ererre'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'Junaid', 'Khateeb', '3434323'),
+('1', 'MUMBAI', 'DELHI', '6E 591', '6E 914', 11368.12, 'Mr.', 'junaid', 'Khateeb', '45555445435');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flight`
+--
+
+CREATE TABLE IF NOT EXISTS `flight` (
+  `flightid` text NOT NULL,
+  `airline` text NOT NULL,
+  `source` text NOT NULL,
+  `destination` text NOT NULL,
+  `departtime` text NOT NULL,
+  `arrivaltime` text NOT NULL,
+  `fare` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `flight`
+--
+
+INSERT INTO `flight` (`flightid`, `airline`, `source`, `destination`, `departtime`, `arrivaltime`, `fare`) VALUES
+('JW 883', 'JET AIRWAYS', 'MUMBAI', 'BANGALORE', '10:20', '12:35', 2863),
+('JW 123', 'JET AIRWAYS', 'MUMBAI', 'DELHI', '7:15 ', '9:00', 5500),
+('JW 124', 'JET AIRWAYS', 'DELHI', 'MUMBAI', '11:45', '13:50', 6000),
+('6E 914', 'INDIGO', 'DELHI', 'MUMBAI', '05:00', '06:45', 3911),
+('6E 591', 'INDIGO', 'MUMBAI', 'DELHI', '14:00', '15:55', 4850),
+('6E 914', 'INDIGO', 'DELHI', 'MUMBAI', '05:00', '06:45', 3911),
+('JW 345', 'JET AIRWAYS', 'MUMBAI', 'KOLKATA', '14:25', '15:55', 4580),
+('JW591', 'JET AIRWAYS', 'KOCHI', 'HYDERABAD', '07:00', '08:20', 4580);
